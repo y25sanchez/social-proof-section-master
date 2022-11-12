@@ -10,11 +10,15 @@ html {
 }
 body {
   font-family: "League Spartan", sans-serif;
-  background: url(/images/bg-pattern-top-mobile.svg) no-repeat, url(/images/bg-pattern-bottom-mobile.svg) no-repeat;
-  background-position:top left, bottom right;
+  background: url(/images/bg-pattern-top-mobile.svg) no-repeat,
+    url(/images/bg-pattern-bottom-mobile.svg) no-repeat;
+  background-position: top left, bottom right;
 }
 .container {
-  width: 375px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 19px;
 }
 
 .container__half-1__letter {
@@ -25,19 +29,20 @@ body {
   line-height: 0.8;
   letter-spacing: -1px;
   font-size: 40px;
-  margin: 80px 64px 0px;
 }
 .container__half-1__letter p {
   color: var(--Dark-Grayish-Magenta);
   line-height: 1.5;
-  font-size: 18px;
+  font-size: 16px;
   margin: 20px 22px;
 }
+
 .rates__container {
-  width: 328px;
-  height: 70px;
+  max-width: 528px;
+  padding-bottom: 10px;
   background-color: var(--Light-Grayish-Magenta);
   border-radius: 10px;
+  margin: 0 auto;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -51,21 +56,18 @@ body {
 .rates__container img {
   margin-top: 15px;
 }
-.container__half-1__rates {
-  margin-left: 26px;
-}
+
 /*-------------------------Second Section---------------------*/
 .container__half-2 {
   margin-bottom: 50px;
 }
 .container__half-2__cards {
-  width: 328px;
-  height: 250px;
+  max-width: 528px;
   background-color: var(--Very-Dark-Magenta);
   color: var(--White);
   margin-bottom: 16px;
-  margin-left: 26px;
   border-radius: 10px;
+  padding: 32px;
 }
 
 .container__half-2__cards__name {
@@ -73,7 +75,6 @@ body {
 }
 .container__half-2__cards__name img {
   width: 42px;
-  margin: 40px 0 0 34px;
   border-radius: 50%;
 }
 .container__half-2__cards__name h2 {
@@ -84,11 +85,13 @@ body {
   color: var(--Soft-Pink);
   margin: 0;
 }
+
 .container__half-2__cards__name__client {
-  margin: 42px 0 0 22px;
+  margin-left: 20px;
 }
-.container__half-2__cards__review {
-  margin: 0 40px 0 34px;
+
+.container__half-2__cards__review p {
+  line-height: 1.5;
 }
 
 .attribution {
@@ -103,15 +106,18 @@ body {
     margin: 0 auto;
   }
 }
-@media (min-width: 768px) {
-  body{
-    background: url(/images/bg-pattern-top-desktop.svg) no-repeat, url(/images/bg-pattern-bottom-desktop.svg) no-repeat;
-    background-position:top left, bottom right;
+@media (min-width: 900px) {
+  body {
+    background: url(/images/bg-pattern-top-desktop.svg) no-repeat,
+      url(/images/bg-pattern-bottom-desktop.svg) no-repeat;
+    background-position: top left, bottom right;
+    background-size: cover cover;
+    height: 100vh;
   }
 
   .container {
-    width: 1440px;
-    margin: 116px auto;
+    max-width: 1440px;
+    margin: auto;
   }
   .container__half-1 {
     display: flex;
@@ -122,57 +128,72 @@ body {
   }
 
   .container__half-1__letter {
-    margin-left: 166px;
-    width: 720px;
+    margin-top: 144px;
+    width: 100%;
+    flex: 1;
     text-align: start;
   }
   .container__half-1__letter h1 {
-    margin-left: 22px;
-    width: 412px;
-    font-size: 50px;
+    font-size: 60px;
   }
   .container__half-1__letter p {
-    width: 412px;
+    font-size: 22px;
+    margin: 0;
   }
   .container__half-1__rates {
-    margin-left: -125px;
-    margin-top: 80px;
-    width: 720px;
+    margin-top: 144px;
+    flex: 1;
   }
   .rates__container {
     display: flex;
     flex-direction: row;
-    width: 446px;
+    max-width: 446px;
     height: 58px;
   }
+
+  .rates__container__one {
+    margin-left: 0;
+  }
+
   .rates__container__two {
-    margin-left: 50px;
+    margin-left: 10%;
   }
   .rates__container__three {
-    margin-left: 100px;
+    margin-left: 20%;
   }
-  .container__half-2__cards {
-    margin-top: 25px;
-    width: 350px;
-    transition: 0.2s ease;
-  }
+
   .container__half-1__rates__stars {
     margin-left: 32px;
     margin-bottom: 10px;
   }
-  .rates__container p {
-    margin-left: 25px;
-  }
   /*-----------------------------second section----------------------------*/
+  .container__half-2__cards {
+    margin-top: 25px;
+    width: 350px;
+    height: fit-content;
+    max-height: 235px;
+    transition: 0.2s ease;
+  }
+
+  .container__half-2__cards__name__client h2 {
+    font-size: 22px;
+  }
+
+  .container__half-2__cards__name__client p {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  .container__half-2__cards__review p {
+    font-size: 20px;
+  }
+
   .container__half-2 {
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
   }
-  .container__half-2__cards__2 {
-    margin-top: 43px;
-  }
-  .container__half-2__cards__3 {
-    margin-top: 61px;
-  }
+
   .container__half-2__cards:hover {
     box-shadow: 0px 0px 5px black;
     transform: scale(1.01);
