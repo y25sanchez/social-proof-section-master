@@ -134,7 +134,7 @@ body {
     text-align: start;
   }
   .container__half-1__letter h1 {
-    font-size: 60px;
+    font-size: 50px;
   }
   .container__half-1__letter p {
     font-size: 22px;
@@ -149,6 +149,10 @@ body {
     flex-direction: row;
     max-width: 446px;
     height: 58px;
+  }
+
+  .rates__container p{
+    margin-left: 35px;
   }
 
   .rates__container__one {
@@ -198,5 +202,25 @@ body {
     box-shadow: 0px 0px 5px black;
     transform: scale(1.01);
     cursor: pointer;
+  }
+
+
+  .container__half-2__cards__2{
+    margin-top: 5%;
+  }
+  .container__half-2__cards__3{
+    margin-top: 10%;
+  }
+}
+
+@media screen and (max-width:1300px) {
+  .container__half-2__cards__1{
+    margin-top: 0;
+  }
+  .container__half-2__cards__2{
+    margin-top: 0;
+  }
+  .container__half-2__cards__3{
+    margin-top: 0;
   }
 }
